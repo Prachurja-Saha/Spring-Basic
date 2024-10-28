@@ -20,7 +20,18 @@
    (like security scans or static code analysis) will be executed as part of the pipeline to verify that the 
     code changes do not introduce any issues.
 4. Generate Artifacts: If the build and tests pass, the pipeline will generate deployable artifacts 
-   (e.g., JAR, WAR, Docker images) and store them in an artifact repository 
+   (e.g., JAR, WAR, Docker images) and store them in an artifact repository/ Maven remote repository
     [like Nexus, Artifactory, or a Docker registry].
 
 # Step 3: Deploy to Staging Environment(qa/dev/prod)
+
+# step 4: Final Goal
+* Our Project Jar/war will store in Application server
+* Application server is essential for handling web requests and running the application 
+* [Kubernetes manages containerized applications, including those that run on application servers. 
+  However, in a typical cloud-native architecture, applications run inside containers (like Docker) 
+  orchestrated by Kubernetes, rather than directly on traditional application servers.]
+* `For Springboot has an embedded Tomcat server in springboot JAR, it includes the Tomcat server (by default).`
+* `when we run spring-boot web app it starts the embedded Tomcat server`
+* `locally or in production, when you run a Spring Boot application,`
+* `the embedded Tomcat server starts automatically and serves the web app`
