@@ -1,10 +1,16 @@
 package com.practice.springbasic.springcore;
 
 import com.practice.springbasic.SpringBasicApplication;
+import com.practice.springbasic.springcore.types_of_configuration.MyClass;
+import com.practice.springbasic.springcore.types_of_configuration.XMLTest;
+import com.practice.springbasic.springcore.types_of_di.Test;
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
 
+/* In the context of the Spring Framework, a bean refers to an object*/
+/* Bean/IOC Container 2 types: 1.BeanFactory(basic)  2.ApplicationContext(Advance) */
 @Component
 public class TestIOCMain {
 
@@ -13,6 +19,7 @@ public class TestIOCMain {
     }
     public static void main(String[] args) {
 
+        // ---------- Test IOC and DI --------------
         // This will Run the IOC container -> SpringApplication.run(SpringBasicApplication.class, args)
         /*
             IOC container itself is object so
@@ -40,6 +47,30 @@ public class TestIOCMain {
          @EnableAutoConfiguration , @Configuration
          b/c this class is in same package application will still run
          */
+
+        // ---- Types of DI Test -----
+        Test test = context.getBean(Test.class);
+        test.print();
+
+        //-------- Types of configuration-----------
+
+        // 1. XML Configuration
+        ApplicationContext xmlTestContext
+                = new ClassPathXmlApplicationContext("bean.xml"); // File name
+        XMLTest xmlTest = xmlTestContext.getBean(XMLTest.class);
+        xmlTest.test();
+        System.out.println(xmlTest.getSomeProperty());
+
+        // 2. Bean Annotation
+        MyClass beanTest = context.getBean(MyClass.class);
+        beanTest.test();
+
+
+
+
+
     }
+
+    //TODO: What is command liner
 
 }

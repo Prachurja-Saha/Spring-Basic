@@ -19,11 +19,26 @@ public class Test {
         this.diTest = diTest;
     }
 
+// @Autowired annotation tells Spring’s IoC container to inject the required bean when
+// it encounters the setter method.
     @Autowired
     public void setDI(DITest diTest) { // Setter Injection Not Recommended
         this.diTest2 = diTest;
     }
+    /*
+    from Spring 4.3, if a class has a single constructor, Spring will automatically assume it should use that
+    constructor for dependency injection. This makes constructor injection very convenient and is part of why
+    it's generally preferred over setter injection.
+    Setter injection doesn't have the same automatic detection as constructor injection
+    that's why autowired is required -- IOC will call the setter method
+    */
 
+
+    public void print(){
+
+        /* All are same object created by different way b/c IOC will create obj once [Singleton Scope] */
+        System.out.println("1.-" + diTest +" 2.-"+diTest2 +" 3.-"+ diTest3);
+    }
 
     /*
      * Constructor Injection: Dependencies are provided through a class constructor.
