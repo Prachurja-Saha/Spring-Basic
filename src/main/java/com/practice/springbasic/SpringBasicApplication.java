@@ -1,5 +1,6 @@
 package com.practice.springbasic;
 
+import com.practice.springbasic.springaop.TestAopClass;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -24,6 +25,9 @@ public class SpringBasicApplication {
                 Bean Post Processors: It allows for customization of beans after their instantiation.
                 AOP Support: It integrates with Spring’s Aspect-Oriented Programming features.
  */
+
+        TestAopClass testAopClass = context.getBean(TestAopClass.class);
+        testAopClass.test("amit");
 
     }
 
