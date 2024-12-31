@@ -11,7 +11,7 @@ public class IocAndDITest2 {
     Food food;
 
     // Without DI
-    IocAndDITest2(){
+    IocAndDITest2(){ /* Also this difficult to mock Food*/
         food = new Burger(); // Here IocAndDITest2 is dependent on Burger
                             // if I want Pizza implementation I can't use that
                             // either Burger or Pizza
