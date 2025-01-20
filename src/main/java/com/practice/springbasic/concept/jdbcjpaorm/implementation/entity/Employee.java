@@ -6,6 +6,10 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 // spring data jpa is build on top of jpa specification.It simplifies working with jpa
 
 @Entity
@@ -38,5 +42,28 @@ public class Employee {
     // @JoinColumn(name = "l_id", referencedColumnName = "id") //-> referencedColumnName is Laptop primary key column
     // private Laptop laptop;
 
+    // mappedBy means bi directional
+    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Project> projects;
+
+
+
+    @ManyToMany
+    @JoinTable(
+            name = "employee_course",
+            joinColumns = @JoinColumn(name = "employee_id"),
+            inverseJoinColumns = @JoinColumn(name = "course_id")
+    )
+    private Set<Course> courses = new HashSet<>();
+
+    /*
+        ManyToMany
+        Note: Note that using @JoinTable or even @JoinColumn isn’t required.
+        JPA will generate the table and column names for us. However, the strategy JPA uses won’t always match the
+        naming conventions we use. So, we need the possibility to configure table and column names.
+
+        It will not add new column to existing table, instead it creates separate join table to maintain relation
+        ship between the two entities
+    */
 
 }

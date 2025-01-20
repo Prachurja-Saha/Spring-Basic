@@ -1,4 +1,13 @@
 # CasCade
+cascade in Hibernate and Spring Data JPA refers to the cascading of operations (like save, delete, etc.) 
+from a parent entity to its related child entities.
+Cascade Types
+ALL: All operations will cascade from the parent to the child entity.
+PERSIST: When the parent entity is saved, all related child entities are also saved.
+MERGE: If the parent entity is updated, all references to child entities are updated as well.
+REMOVE: When the parent entity is deleted, all related child entities are also deleted.
+REFRESH: If the parent entity is refreshed, all child entities are refreshed as well.
+DETACH: If the parent entity is detached from the persistence context, the child entities are also detached.
 
 # Fetch Types in Hibernate/JPA: defines when related entities should be loaded from the database.
 * 1. `Lazy Fetching (FetchType.LAZY)`:
