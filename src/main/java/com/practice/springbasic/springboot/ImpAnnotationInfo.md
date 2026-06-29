@@ -13,3 +13,6 @@ and the injection will not occur.
 Internally use Jackson (or another configured JSON library) to handle the conversion of JSON data to Java objects and vice versa.
 Spring Boot, by default, uses MappingJackson2HttpMessageConverter to convert the JSON string to a Java object.
 Jackson is the default JSON library used by Spring Boot for this purpose.
+
+
+## Spring Core Concept

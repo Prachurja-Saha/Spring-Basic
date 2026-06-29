@@ -1,0 +1,1 @@
+Spring MVC: It is a powerful framework for building web applications that follow the Model-View-Controller pattern.

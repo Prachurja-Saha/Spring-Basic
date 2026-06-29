@@ -1,4 +1,4 @@
-package com.practice.springbasic.springcore.types_of_di;
+package com.practice.springbasic.springcore.ioc_and_di.types_of_di;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -15,16 +15,19 @@ public class Test {
     @Autowired                // Use Java Reflection API
     private DITest diTest3;  // Field Injection Not Recommended
 
+    /* For all types of dependency injection (constructor, setter, or field), the Spring IoC container uses Java
+     Reflection under the hood to inject dependencies.*/
+
     Test(DITest diTest){       // Constructor Injection -> Recommended
         this.diTest = diTest;
     }
 
-// @Autowired annotation tells Spring’s IoC container to inject the required bean when
-// it encounters the setter method.
+    // @Autowired annotation tells Spring’s IoC container to inject the required bean when it encounters the setter method.
     @Autowired
     public void setDI(DITest diTest) { // Setter Injection Not Recommended
         this.diTest2 = diTest;
     }
+
     /*
     from Spring 4.3, if a class has a single constructor, Spring will automatically assume it should use that
     constructor for dependency injection. This makes constructor injection very convenient and is part of why

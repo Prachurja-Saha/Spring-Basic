@@ -3,7 +3,7 @@ package com.practice.springbasic.springcore;
 import com.practice.springbasic.SpringBasicApplication;
 import com.practice.springbasic.springcore.types_of_configuration.MyClass;
 import com.practice.springbasic.springcore.types_of_configuration.XMLTest;
-import com.practice.springbasic.springcore.types_of_di.Test;
+import com.practice.springbasic.springcore.ioc_and_di.types_of_di.Test;
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

@@ -66,6 +66,10 @@ To run a web application, you’d typically package it as a WAR file and deploy 
 ### 7. Spring Boot Actuator for Production-Ready Monitoring and Metrics
 
 
+[NOTES]
+application.properties file allows you to externalize configuration settings, 
+making it easier to manage and change them without modifying your code.
+
 
 
 

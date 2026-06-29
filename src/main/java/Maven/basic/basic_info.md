@@ -2,7 +2,9 @@
 1. In a Java project, an artifact is a file, typically a JAR (Java Archive), WAR (Web Application Archive), 
    or EAR (Enterprise Application Archive), `that is produced during the build process`. 
 2. Artifacts represent the packaged form of your project, which can be deployed or used as a
-   dependency in other projects. 
+   dependency in other projects.
+3. [When java source code compile it generates bytecode and store in .class file and .class file store in same directory
+   where .java file is there. Multiple .class file + resource etc. files all combine is called jar file ]
 
 `JAR File` contains the following components:
 1. [Compiled Java Classes (.class files)]: 
